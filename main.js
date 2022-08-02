@@ -16,15 +16,22 @@ fetch(searchUrl, {
 // data is whatever the above code returns
 .then(function (data) {
     let searchResults = data.results
-    console.log(searchResults)
-    showArtistName(searchResults)
+    console.log(searchResults);
+    showResults(searchResults);
 })
 // function for displaying song results
-function showArtistName(songArray) {
+function showResults(songArray) {
     for (let song of songArray){
-        let songReturnDiv = document.createElement('div')
-        songReturnDiv.classList.add('songReturn')
-        resultsDiv.append(songReturnDiv); 
-        songReturnDiv.append(song.artistName);
+        let songTitleDiv = document.createElement('div');
+        let artistReturnDiv = document.createElement('div');
+        
+        songTitleDiv.classList.add('songTitle')
+        resultsDiv.append(songTitleDiv);
+        songTitleDiv.append(song.trackName);
+        
+        artistReturnDiv.classList.add('artistReturn')
+        resultsDiv.append(artistReturnDiv); 
+        artistReturnDiv.append(song.artistName);
+        
     }
 }

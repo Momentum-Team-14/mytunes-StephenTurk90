@@ -1,4 +1,4 @@
-.container {
+body {
     background: lightgray;
 }
 
@@ -6,6 +6,15 @@ Header {
     color: Blue;
 }
 
-.songReturn {
+#results {
+    border: green 5px solid;
+    display: flex;
+}
+
+.songTitle {
+    border: blue 2px solid;
+}
+
+.artistReturn {
     border: red 2px solid;
 }
