@@ -22,6 +22,7 @@ fetch(searchUrl, {
 // function for displaying song results
 function showResults(songArray) {
     for (let song of songArray){
+        // let albumCoverImg = document.createElement('img');
         let songTitleDiv = document.createElement('div');
         let artistReturnDiv = document.createElement('div');
         
@@ -32,6 +33,10 @@ function showResults(songArray) {
         artistReturnDiv.classList.add('artistReturn')
         resultsDiv.append(artistReturnDiv); 
         artistReturnDiv.append(song.artistName);
+
+        // albumCoverImg.classList.add(img);
+        // resultsDiv.append(albumCoverDiv); 
+        // albumCoverDiv.append(song.artworkURL100);
         
     }
 }
