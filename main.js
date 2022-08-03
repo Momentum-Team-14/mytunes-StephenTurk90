@@ -52,11 +52,19 @@ function getSearchResults(url) {
             artistReturnDiv.classList.add('artistReturn')
             artistReturnDiv.append(song.artistName);
             // artist return
+
+            let audioTag = document.createElement("audio");
+            audioTag.classList.add("audio");
+            audioTag.src = song.previewUrl;
+            audioTag.controls = true;
+            songReturnDiv.appendChild(audioTag);
             
             resultsDiv.appendChild(songReturnDiv)
             songReturnDiv.appendChild(albumCoverImg)
             songReturnDiv.appendChild(songTitleDiv)
             songReturnDiv.appendChild(artistReturnDiv)
+            songReturnDiv.appendChild(audioTag)
+            //shows alls data 
         }
     }
     
