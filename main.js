@@ -19,24 +19,27 @@ fetch(searchUrl, {
     console.log(searchResults);
     showResults(searchResults);
 })
-// function for displaying song results
+// functions for displaying song results
 function showResults(songArray) {
     for (let song of songArray){
-        // let albumCoverImg = document.createElement('img');
-        let songTitleDiv = document.createElement('div');
-        let artistReturnDiv = document.createElement('div');
+        let songReturnDiv = document.createElement('div')
+        songReturnDiv.classList.add('songReturn')
         
+        let albumCoverImg = document.createElement('img');
+        albumCoverImg.classList.add('albumCoverImg')
+        albumCoverImg.append('albumCoverImg')
+        albumCoverImg.src = `${song.artworkUrl100}`
+        // album cover attempt
+
+        let songTitleDiv = document.createElement('div');
         songTitleDiv.classList.add('songTitle')
         resultsDiv.append(songTitleDiv);
         songTitleDiv.append(song.trackName);
+        // song title return
         
+        let artistReturnDiv = document.createElement('div');
         artistReturnDiv.classList.add('artistReturn')
         resultsDiv.append(artistReturnDiv); 
         artistReturnDiv.append(song.artistName);
-
-        // albumCoverImg.classList.add(img);
-        // resultsDiv.append(albumCoverDiv); 
-        // albumCoverDiv.append(song.artworkURL100);
-        
-    }
-}
+        // artist return
+}}
