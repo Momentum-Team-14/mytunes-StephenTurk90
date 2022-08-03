@@ -2,8 +2,14 @@ body {
     background: lightgray;
 }
 
-Header {
+h1 {
+    font-size: 20pt;
+    font-weight: bold;
     color: Blue;
+}
+
+h2 {
+    color: blue;
 }
 
 #results {
@@ -15,6 +21,10 @@ Header {
     justify-items: center;
     flex-direction: row;
     flex: 200px;
+}
+
+.albumCoverImg {
+    border: black 2px solid;
 }
 
 .songTitle {
