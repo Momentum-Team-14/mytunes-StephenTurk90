@@ -15,6 +15,16 @@ h2 {
     text-align: center;
 }
 
+button {
+    background: blue;
+    color: white;
+    border: white solid;
+    border-width: 0.125rem;
+    font-family: 'DotGothic16', sans-serif;
+    border-radius: 1rem;
+}
+
+
 #results {
     display: flex;
     flex-wrap: wrap;
@@ -52,4 +62,5 @@ h2 {
     transform: scale(0.65, 0.65);
     transform-origin: left;
     padding-left: 0.5rem;
+    time-display: color
 }
