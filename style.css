@@ -14,11 +14,6 @@ Header {
 
 
 
-.albumCoverImg {
-    width: 100%;
-    margin-top: 0;
-}
-
 .songTitle {
     border: blue 2px solid;
 }
