@@ -9,6 +9,12 @@ Header {
 #results {
     border: green 5px solid;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    justify-items: center;
+    flex-direction: row;
+    flex: 200px;
 }
 
 .songTitle {
