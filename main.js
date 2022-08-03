@@ -5,6 +5,8 @@ let resultsDiv = document.querySelector('#results')
 // fetch songs from iTunes
 let searchUrl = ' https://itunes.apple.com/search?term=Andrew+Bird'
 
+let searchForm = 
+
 fetch(searchUrl, {
     method: 'GET',
     headers: {'Content-Type': 'application/json'}
