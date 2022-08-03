@@ -7,13 +7,20 @@ body {
 
 h1 {
     font-size: 20pt;
-    text-align: center;
+    font: underline;  
+    text-decoration: underline;     
+    text-decoration-color: white;   
 }
 
 h2 {
     font-size: 20pt;
-    text-align: center;
 }
+
+p {
+    font-size: 8pt;
+
+}
+
 
 button {
     background: blue;
@@ -41,7 +48,7 @@ button {
     width: 13rem;
     margin: 0.25rem;
     background-color: blue;
-    border: white solid;
+    border: white 30px solid;
     border-width: 0.125rem;
     border-radius: 1rem;
 }
@@ -62,5 +69,4 @@ button {
     transform: scale(0.65, 0.65);
     transform-origin: left;
     padding-left: 0.5rem;
-    time-display: color
 }
