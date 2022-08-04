@@ -69,3 +69,13 @@ button {
     transform-origin: left;
     padding-left: 0.5rem;
 }
+
+.noResults {
+    color: white;
+    width: 13rem;
+    margin: 0.25rem;
+    background-color: blue;
+    border: white 30px solid;
+    border-width: 0.125rem;
+    border-radius: 1rem;
+}

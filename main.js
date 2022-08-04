@@ -3,7 +3,7 @@ const container = document.querySelector(".container")
 let resultsDiv = document.querySelector('#results')
 
 // fetch songs from iTunes
-let searchBaseUrl = 'https://itunes.apple.com/search?term='
+let searchBaseUrl = 'https://proxy-itunes-api.glitch.me/search?term='
 
 let searchForm = document.querySelector('#search-form')
 
@@ -11,7 +11,7 @@ searchForm.addEventListener('submit', (event) => {
     event.preventDefault()
     let searchBox = document.querySelector('#search-box')
     let searchUrl = `${searchBaseUrl}${searchBox.value}`
-    // console.log('search url', searchUrl)
+    console.log('search url', searchUrl)
     clearSongs()
     getSearchResults(searchUrl);
 })
@@ -80,6 +80,7 @@ function getSearchResults(url) {
             }
         } else {
             let noResults = document.createElement('div');
+            noResults.classList.add("noResults")
             noResults.innerText = "No results found"
             resultsDiv.appendChild(noResults)
         }
