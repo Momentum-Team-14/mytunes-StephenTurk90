@@ -24,10 +24,10 @@ function getSearchResults(url) {
     })
     // response is whatever the fetch returns
     .then(function (response) {
-        if (!response.ok || response.type === 'cors') {
+        if (!response.ok) {
             throw Error(response.type);
         } else {
-            console.log(response)
+            console.log(response.type)
         return response.json()
     }
     })
