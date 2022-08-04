@@ -12,8 +12,10 @@ searchForm.addEventListener('submit', (event) => {
     let searchBox = document.querySelector('#search-box')
     let searchUrl = `${searchBaseUrl}${searchBox.value}`
     console.log('search url', searchUrl)
+    clearSongs()
     getSearchResults(searchUrl)
 })
+
 
 function getSearchResults(url) {
     fetch(url, {
@@ -31,7 +33,7 @@ function getSearchResults(url) {
         showResults(searchResults);
     })
 
-    
+
     // functions for displaying song results
     function showResults(songArray) {
         for (let song of songArray){
@@ -67,5 +69,10 @@ function getSearchResults(url) {
             //shows alls data 
         }
     }
-    
+}
+
+function clearSongs() {
+    while(resultsDiv.firstChild){
+        resultsDiv.removeChild(resultsDiv.firstChild)
+    }
 }
