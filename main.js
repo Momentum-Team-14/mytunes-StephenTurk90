@@ -13,7 +13,7 @@ searchForm.addEventListener('submit', (event) => {
     let searchUrl = `${searchBaseUrl}${searchBox.value}`
     console.log('search url', searchUrl)
     clearSongs()
-    getSearchResults(searchUrl)
+    getSearchResults(searchUrl);
 })
 
 
@@ -24,14 +24,24 @@ function getSearchResults(url) {
     })
     // response is whatever the fetch returns
     .then(function (response) {
+        if (!response.ok || response.type === 'cors') {
+            throw Error(response.type);
+        } else {
+            console.log(response)
         return response.json()
+    }
     })
     // data is whatever the above code returns, in this case response.json()
     .then(function (data) {
         let searchResults = data.results
         console.log(searchResults);
         showResults(searchResults);
+    }).catch(error => {
+        console.log(error);
+        alert(`Your request failed, for the reason: ${error}`)
     })
+
+    }
 
 
     // functions for displaying song results
@@ -69,7 +79,7 @@ function getSearchResults(url) {
             //shows alls data 
         }
     }
-}
+
 
 function clearSongs() {
     while(resultsDiv.firstChild){
