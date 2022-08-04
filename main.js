@@ -3,7 +3,7 @@ const container = document.querySelector(".container")
 let resultsDiv = document.querySelector('#results')
 
 // fetch songs from iTunes
-let searchBaseUrl = 'https://proxy-itunes-api.glitch.me/search?term='
+let searchBaseUrl = 'https://itunes.apple.com/search?term='
 
 let searchForm = document.querySelector('#search-form')
 
@@ -11,11 +11,10 @@ searchForm.addEventListener('submit', (event) => {
     event.preventDefault()
     let searchBox = document.querySelector('#search-box')
     let searchUrl = `${searchBaseUrl}${searchBox.value}`
-    console.log('search url', searchUrl)
+    // console.log('search url', searchUrl)
     clearSongs()
     getSearchResults(searchUrl);
 })
-
 
 function getSearchResults(url) {
     fetch(url, {
@@ -27,14 +26,12 @@ function getSearchResults(url) {
         if (!response.ok) {
             throw Error(response);
         } else {
-            console.log(response)
         return response.json()
     }
     })
     // data is whatever the above code returns, in this case response.json()
     .then(function (data) {
         let searchResults = data.results
-        console.log(searchResults);
         showResults(searchResults);
     }).catch(error => {
         console.log(error);
@@ -46,9 +43,8 @@ function getSearchResults(url) {
 
     // functions for displaying song results
     function showResults(songArray) {
-        if (songArray.lenghth > 0) {
+        if (songArray.length > 0) {
 
-            
             for (let song of songArray){
                 let songReturnDiv = document.createElement('div')
                 songReturnDiv.classList.add('songReturn')
@@ -73,21 +69,21 @@ function getSearchResults(url) {
                 audioTag.src = song.previewUrl;
                 audioTag.controls = true;
                 songReturnDiv.appendChild(audioTag);
+                // shows audio bar with each song
                 
-                resultsDiv.appendChild(songReturnDiv)
+                resultsDiv.appendChild(songReturnDiv);
                 songReturnDiv.appendChild(albumCoverImg)
                 songReturnDiv.appendChild(songTitleDiv)
                 songReturnDiv.appendChild(artistReturnDiv)
                 songReturnDiv.appendChild(audioTag)
-                //shows alls data 
+                //shows all data 
             }
         } else {
-            let noResults = document.createElement('p');
+            let noResults = document.createElement('div');
             noResults.innerText = "No results found"
             resultsDiv.appendChild(noResults)
         }
     }
-
 
 function clearSongs() {
     while(resultsDiv.firstChild){
